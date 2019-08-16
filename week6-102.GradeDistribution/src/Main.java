@@ -1,23 +1,21 @@
+
 import java.util.Scanner;
-import java.util.ArrayList; 
+
 public class Main {
     public static void main(String[] args) {
-       ArrayList<Integer> grades = new ArrayList<Integer>();
-       List l = new List();
-       Scanner s = new Scanner(System.in);
+       
+        List grades = new List();
+        Scanner s = new Scanner(System.in);
         System.out.println("Type exam scores, -1 completes:");
         while(true){
         int grade = s.nextInt(); 
-        if(grade>=0 && grade<=60){
-            grades.add(grade);
-        }
+        grades.addIf(grade);
         if(grade == -1)
             break;
         }
         System.out.println("");
-       
-        System.out.println(l.getAcceptedPercentage(grades));
-       
+        System.out.println(grades);
+         
        
         
         
