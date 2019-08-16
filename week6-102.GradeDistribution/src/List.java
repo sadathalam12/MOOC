@@ -8,13 +8,15 @@
  *
  * @author sadat
  */
-import java.util.ArrayList; 
+//import java.util.ArrayList; 
+import java.util.List;
 
-public class List {
-    private ArrayList<Integer> grades = new ArrayList<Integer>();
+public class SomeList { // CHANGE THE NAME OF THIS CLASS TO SOMETHING OTHER THAN LIST. JAVA ALREADY HAS ITS OWN LIST CLASS.
     
-    public void addIf(int grade){
-        if(grade>=0 && grade<=60){
+    private List<Integer> grades = new ArrayList<Integer>();
+    
+    public void addIf(int grade) {
+        if (grade >= 0 && grade <= 60) {
             grades.add(grade);
         }
     }
@@ -22,12 +24,12 @@ public class List {
     public double getAcceptedPercentage(){
         int a = 0; 
         int grade = 0; 
-        for(int i=0; i<grades.size(); i++){
-            grade = grades.get(i); 
-            if(grade>29)
+        for (int individualGrade : grades) {
+            if (individualGrade > 29) {
                 a++;
         }
-        return 100*((double)a/grades.size()) ;
+        
+        return 100.0*( (double) a / grades.size() ) ;
     }
     
     public int getGrade(int i){
@@ -36,57 +38,65 @@ public class List {
     
     public int distribution(int grade){
          
-         int d = 0;
+        int d = 0;
             
-             if(grade>=0 && grade<=29){
-                 d = 0; 
-             }else if(grade>=30 && grade<=34){
-                 d = 1; 
-             }else if(grade>=35 && grade<=39){
-                 d = 2; 
-             }else if(grade>=40 && grade<=44){
-                 d = 3; 
-             }else if(grade>=45 && grade<=49){
-                 d = 4; 
-             }else 
-                 d = 5; 
-                return d; 
-    }
-   
-   
-    
-    public void fiveStar(){
-       this.printStar(5);
+        if (grade >= 0 && grade <= 29) {
+            d = 0; 
+        } else if (grade >= 30 && grade <= 34) {
+            d = 1; 
+        } else if (grade >= 35 && grade <= 39) {
+            d = 2;
+        } else if (grade >= 40 && grade <= 44) {
+            d = 3; 
+        } else if (grade >= 45 && grade <= 49) {
+            d = 4;
+        } else 
+            d = 5; 
         }
-    public void fourStar(){
+        
+        return d; 
+    }
+  
+    public void fiveStar() {
+        this.printStar(5);
+    }
+    
+    public void fourStar() {
        this.printStar(4);
     }
-    public void threeStar(){
+    
+    public void threeStar() {
         this.printStar(3);
     }
-    public void twoStar(){
+    
+    public void twoStar() {
          this.printStar(2);
     }
-    public void oneStar(){
+    
+    public void oneStar() {
         this.printStar(1);
     }
-    public void zeroStar(){
-         this.printStar(0);
-        }
     
-    public void printStar(int a){
-        for(int i= 0; i<grades.size(); i++){
-            if(this.distribution(this.getGrade(i))==a)
+    public void zeroStar() {
+         this.printStar(0);
+    }
+    
+    public void printStar(int a) {
+        for (individualGrade : grades) {
+            if (this.distribution(individualGrade) == a) {
                 System.out.print("*");
+            }
         }
     }
    
-    
-    public String toString(){
+    public String toString() {
         
         System.out.println("Grade distribution:");
-        int a = 5; 
-        for(int i = 0; i<6; i++){
+        
+        int a = 5;
+        
+        // WHAT IS THIS????
+        for (int i = 0; i<6; i++){
            System.out.print(a+": ");
             if(a==5)
             this.fiveStar();
