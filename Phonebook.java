@@ -8,47 +8,43 @@
  *
  * @author sadat
  */
-import java.util.ArrayList;
+import java.util.List;
+
 public class Phonebook {
-    private ArrayList<Person> people = new ArrayList<Person>(); 
-     
     
+    private List<Person> people = new ArrayList<Person>(); 
     
-    public void add(String name, String phoneNumber ){
-      Person p = new Person(name, phoneNumber); 
-        people.add(p); 
-       
-        
+    public void add(String name, String phoneNumber ) {
+        Person p = new Person(name, phoneNumber); 
+        people.add(p);     
     }
-    public void printAll(){
-       
-        for(int i=0; i<people.size();i++){
+    
+    public void printAll() {
+        for (int i = 0; i<people.size();i++) {
             System.out.println(people.get(i));
         }
     }
-    public String searchNumber(String name){
+    
+    public String searchNumber(String name) {
        int i = 0; 
        String a = null;  
        Person x; 
       
-       while(i<people.size()){
-          x= people.get(i); 
+       while (i<people.size()) {
+           x = people.get(i); 
           
-           
-           if(x.getName()==name){
+           if (x.getName().equals(name))  {
                a = x.getNumber(); 
-           }else{
-              a= "not known number"; 
+           } else {
+              a = "not known number"; 
            }
-          i++; 
            
+           i++;  
        }
        
-        return a; 
-      }
-         
-             
-         }
+       return a; 
+    }
+}
         
     
     
