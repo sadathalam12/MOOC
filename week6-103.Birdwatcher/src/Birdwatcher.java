@@ -106,12 +106,17 @@ public class Birdwatcher {
         Bird b; 
         System.out.print("What? " );
         bird = s.nextLine(); 
+        if(this.isItThere(bird)){
         for(int i =0; i<birds.size(); i++){
             b = birds.get(i); 
             if(b.getName().equals(bird))
                 System.out.print(b.getName()+" "+"("+b.getLatinName()+"): "+this.numberOfObservations(b)+" observations");
             }
-        System.out.println("");
+        }else{
+            System.out.println("It is not a bird!");
+        }
+            
+       
     }
     
    

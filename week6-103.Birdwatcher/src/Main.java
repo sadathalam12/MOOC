@@ -9,18 +9,23 @@ public class Main {
     // new Scanner only once. If you need scanner in multiple places, you can pass it as parameter
       Birdwatcher sadath = new Birdwatcher();  
     Scanner s = new Scanner(System.in);    
+   String add = "Add"; 
+   String quit = "Quit"; 
+   String ob = "Observation"; 
+   String show = "Show"; 
+   String stat = "Statistics";
     while(true){
                System.out.print("? ");
                String userInput = s.nextLine(); 
-               if(userInput.equals("Quit")){
+               if(userInput.trim().equalsIgnoreCase(quit)){
                    break;
-               }else if(userInput.equals("Add")){
+               }else if(userInput.trim().equalsIgnoreCase(add)){
                    sadath.add();
-               }else if(userInput.equals("Observation")){
+               }else if(userInput.trim().equalsIgnoreCase(ob)){
                    sadath.observation();
-           }else if(userInput.equals("Statistics")){
+           }else if(userInput.trim().equalsIgnoreCase(stat)){
                sadath.statistics();
-           }else if(userInput.equals("Show")){
+           }else if(userInput.trim().equalsIgnoreCase(show)){
                sadath.show();
            }
     }
