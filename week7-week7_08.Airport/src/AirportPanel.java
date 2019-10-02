@@ -13,14 +13,15 @@ public class AirportPanel {
     private ArrayList<Plane> planes;
     private ArrayList flights; 
    private UserInput s;
-   private Plane p; 
+  
    
    
     private String departtureCode; 
     private String destinationCode;
     
     public AirportPanel(){
-        planes = new ArrayList<Plane>(); 
+        planes = new ArrayList<Plane>();
+        s = new UserInput();
     }
     
     public void addAirplane(){
@@ -28,13 +29,12 @@ public class AirportPanel {
        String planeId = s.getString();
         System.out.print("Give plane capacity: ");
        int planeCap = s.getInt();
-       p = new Plane(planeId, planeCap);
-       planes.add(p);
+      planes.add(new Plane(planeId,planeCap));
          }
     
     public void printPlanes(){
         for(Plane plane: planes){
-            System.out.print(plane.getPlaneId() + "("+plane.getPlaneId()+")");
+            System.out.print(plane.getPlaneId() + "("+plane.getPlaneCap()+")");
         }
     }
     
