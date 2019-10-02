@@ -10,15 +10,17 @@
  */
 import java.util.Scanner;
 public class UserInput {
-    
-    Scanner s = new Scanner(System.in); 
-    
-    public int getNextInt(){
-        return s.nextInt();
+   private Scanner s; 
+    public UserInput(){
+        s = new Scanner(System.in);
     }
-    public String getNextLine(){
+    public String getString(){
         return s.nextLine();
     }
-   
+    public int getInt(){
+        return s.nextInt();
+    }
+    
+    
     
 }
