@@ -12,6 +12,7 @@ public class Plane {
     private String planeId; 
     private int planeCap; 
     
+    
     public Plane(String planeId, int planeCap){
         this.planeId = planeId; 
         this.planeCap = planeCap;

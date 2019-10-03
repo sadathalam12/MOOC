@@ -34,6 +34,9 @@ public class UserInterface {
         if(userInput.equals("x")){
             break;
         }
+        if(userInput.equals("2")){
+            p.addFlight();
+        }
         
         }
     }
@@ -48,13 +51,19 @@ public class UserInterface {
         System.out.println("[2] Print flights");
         System.out.println("[3] Print plane info");
         System.out.println("[x] Quit");
-        
+        System.out.print("> ");
         String userInput = s.getString();
         if(userInput.equals("1")){
             p.printPlanes();
         }
         if(userInput.equals("x")){
             break;
+        }
+        if(userInput.equals("2")){
+          p.printFlights();
+        }
+        if(userInput.equals("3")){
+            p.printPlaneInfo();
         }
         
     }

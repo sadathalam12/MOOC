@@ -18,7 +18,7 @@ public class UserInput {
         return s.nextLine();
     }
     public int getInt(){
-        return s.nextInt();
+        return Integer.parseInt(s.nextLine());
     }
     
     
