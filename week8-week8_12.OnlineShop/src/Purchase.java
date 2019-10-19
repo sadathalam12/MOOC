@@ -11,12 +11,14 @@
 public class Purchase {
     private String product; 
     private int amount; 
-    private int unitPrice; 
+    private int unitPrice; // shouldn't this be a double, since it's a price???
+    private final int DEFAULT_AMOUNT = 1;
+    private final int DEFAULT_PRICE = 1;
     
     public Purchase(String product, int amount, int unitPrice){
         this.product = product; 
-        this.amount = amount; 
-        this.unitPrice = unitPrice; 
+        this.amount = (amount < 0) ? DEFAULT_AMOUNT : amount; // WHAT HAPPENS IF AMOUNT ENTERED IS NEGATIVE??? 
+        this.unitPrice = unitPrice; // WHAT HAPPENS IF PRICE ENTERED IS NEGATIVE???
         
     }
     
