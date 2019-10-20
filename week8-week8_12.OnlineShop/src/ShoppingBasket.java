@@ -8,28 +8,30 @@
  *
  * @author sadat
  */
-import java.util.Map; 
-import java.util.HashMap; 
+import java.util.ArrayList;
+import java.util.List;
+
  
 public class ShoppingBasket {
-    Map<String, Purchase> purchases; 
+    List<Purchase> purchases;  
     
     public ShoppingBasket(){
-        this.purchases = new HashMap<String, Purchase>(); 
+       this.purchases = new ArrayList<Purchase>(); 
     }
   
     
     public void add(String product, int price){
-        purchases.put(product, new Purchase(product,1,price)); 
+        purchases.add(new Purchase(product,1,price));
         
     }
     
     public int price(){
        int price = 0; 
-        for(String a: purchases.keySet()){
+       
+        for(Purchase a: purchases){
             
-            Purchase b = purchases.get(a); 
-             price += b.price(); 
+            
+             price += a.price();
             
         }
         return price; 
