@@ -13,7 +13,7 @@ import java.util.List;
 
  
 public class ShoppingBasket {
-    List<Purchase> purchases;  
+    private List<Purchase> purchases;  
     
     public ShoppingBasket(){
        this.purchases = new ArrayList<Purchase>(); 
@@ -21,9 +21,20 @@ public class ShoppingBasket {
   
     
     public void add(String product, int price){
-        purchases.add(new Purchase(product,1,price));
         
-    }
+        Purchase a = new Purchase(product, 1, price); 
+        if(!purchases.contains(a)){
+            purchases.add(a); 
+        }else{
+            a.increaseAmount();
+          }
+       }
+        
+          
+        
+        
+    
+    
     
     public int price(){
        int price = 0; 
@@ -36,6 +47,13 @@ public class ShoppingBasket {
         }
         return price; 
     }
+    
+    public void print(){
+        for(Purchase a: purchases){
+            System.out.println(a);
+        }
+    }
    
     
 }
+
