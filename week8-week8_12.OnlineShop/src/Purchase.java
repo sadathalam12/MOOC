@@ -19,15 +19,9 @@ public class Purchase {
         this.unitPrice = unitPrice; 
         
     }
-    public String getProduct(){
-        return product; 
-    }
-    public int getAmount(){
-        return amount; 
-    }
-    public int getUnitPrice(){
-        return unitPrice; 
-    }
+    
+    
+   
     
     
     public int price(){
@@ -42,18 +36,7 @@ public class Purchase {
         return this.product +": "+ this.amount; 
     }
     
-    public boolean equals(Object o){
-        if(this.getClass() != o.getClass()){
-            return false; 
-        }
-        Purchase difference = (Purchase) o; 
-        if(difference.getProduct() == this.getProduct() && difference.getAmount() == this.getAmount() && difference.getUnitPrice() == this.getUnitPrice()){
-            return true; 
-        }else
-            return false;
-            
-        
-    }
+    
     
     
 }
