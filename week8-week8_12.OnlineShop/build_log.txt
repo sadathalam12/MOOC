@@ -64,21 +64,22 @@ deps-jar:
 -compile-depend:
 
 -do-compile:
-    [javac] Compiling 1 source file to D:\NetBeansTMC\mooc-2013-OOProgrammingWithJava-PART2\week8-week8_12.OnlineShop\build\classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
-    [javac] 1 warning
 
 -post-compile:
 
 compile:
 
 -pre-pre-compile-test:
-    [mkdir] Created dir: D:\NetBeansTMC\mooc-2013-OOProgrammingWithJava-PART2\week8-week8_12.OnlineShop\build\test\classes
 
 -pre-compile-test:
 
 -compile-test-depend:
 
 -do-compile-test:
-    [javac] Compiling 3 source files to D:\NetBeansTMC\mooc-2013-OOProgrammingWithJava-PART2\week8-week8_12.OnlineShop\build\test\classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
+
+-post-compile-test:
+
+compile-test:
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
